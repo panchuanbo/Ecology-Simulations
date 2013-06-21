@@ -21,7 +21,7 @@ function a = init(height, width, start)
     end
 endfunction
 
-function vm = generationvmLoop(mat, iterations, delay)
+function vm = generationvmLoop(mat, iterations, plotrate, delay)
     dim = size(mat);
     counter = 1;
     for i = 1:iterations,
@@ -73,7 +73,7 @@ function vm = generationvmLoop(mat, iterations, delay)
         
         //subplot(2,2,2)
         //pie([black blue red green], ["Black", "Blue", "Red", "Green"]);
-        if modulo(counter, 10000) == 0 then
+        if modulo(counter, plotrate) == 0 then
             //subplot(2,2,1)
             Matplot(mat);
             //subplot(2,2,3)
