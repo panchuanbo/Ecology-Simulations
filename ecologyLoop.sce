@@ -74,21 +74,21 @@ function vm = generationvmLoop(mat, iterations, delay)
         //subplot(2,2,2)
         //pie([black blue red green], ["Black", "Blue", "Red", "Green"]);
         if modulo(counter, 10000) == 0 then
-        //subplot(2,2,1)
-        Matplot(mat);
-        //subplot(2,2,3)
-        xfrect(dim(1, 1)+1, dim(1, 2)+50, 20, dim(1, 1));
-         if delay > 0 then
-            sleep(delay);
-        end
-        xstring(dim(1, 1)+1, dim(1, 2), 'Black: ' + string(black))
-        //xstring(10,10, 'Black: ' + string(black))
-        xstring(dim(1, 1)+1, dim(1, 2)-1*(dim(1,2)/10), 'Blue: ' + string(blue))
-        xstring(dim(1, 1)+1, dim(1, 2)-2*(dim(1,2)/10), 'Red: ' + string(red))
-        xstring(dim(1, 1)+1, dim(1, 2)-3*(dim(1,2)/10), 'Green: ' + string(green))
-        xstring(dim(1, 1)+1, dim(1, 2)-4*(dim(1,2)/10), 'Currently On')
-        xstring(dim(1, 1)+1, dim(1, 2)-4.5*(dim(1,2)/10), 'Iteration:')
-        xstring(dim(1, 1)+1, dim(1, 2)-5*(dim(1,2)/10), string(counter) + '/' + string(iterations))
+            //subplot(2,2,1)
+            Matplot(mat);
+            //subplot(2,2,3)
+            xfrect(dim(1, 1)+1, dim(1, 2)+50, 20, dim(1, 1));
+                if delay > 0 then
+                    sleep(delay);
+                end
+            xstring(dim(1, 1)+1, dim(1, 2), 'Black: ' + string(black))
+            //xstring(10,10, 'Black: ' + string(black))
+            xstring(dim(1, 1)+1, dim(1, 2)-1*(dim(1,2)/10), 'Blue: ' + string(blue))
+            xstring(dim(1, 1)+1, dim(1, 2)-2*(dim(1,2)/10), 'Red: ' + string(red))
+            xstring(dim(1, 1)+1, dim(1, 2)-3*(dim(1,2)/10), 'Green: ' + string(green))
+            xstring(dim(1, 1)+1, dim(1, 2)-4*(dim(1,2)/10), 'Currently On')
+            xstring(dim(1, 1)+1, dim(1, 2)-4.5*(dim(1,2)/10), 'Iteration:')
+            xstring(dim(1, 1)+1, dim(1, 2)-5*(dim(1,2)/10), string(counter) + '/' + string(iterations))
         end
         counter = counter + 1;
     end,
