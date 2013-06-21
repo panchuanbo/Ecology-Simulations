@@ -1,0 +1,78 @@
+function outputArray = generationip(inputArray)
+    
+    //dimensions of inputArray
+    numberOfRows = size(inputArray,'r')
+    numberOfCols = size(inputArray,'c')
+    //randomly produced indices
+    row = ceil(numberOfRows*rand());
+    col = ceil(numberOfCols*rand());
+    
+    outputArray = inputArray;
+    selectAdjacentPosition = (ceil(4*rand()));
+
+    if selectAdjacentPosition == 1 then
+        if col-1 < 1 then
+            outputArray(row,numberOfCols) = inputArray(row,col);
+        else
+            outputArray(row,col-1) = inputArray(row,col);
+        end,
+    elseif selectAdjacentPosition == 2 then
+        if col+1 > numberOfCols then
+            outputArray(row,numberOfCols)=inputArray(row,col);
+        else
+            outputArray(row,col+1) = inputArray(row,col);
+        end
+    elseif selectAdjacentPosition == 3 then
+        if row-1 < 1 then
+            outputArray(numberOfRows,col)=inputArray(row,col);
+        else
+            outputArray(row-1,col) = inputArray(row,col) ;
+        end
+    elseif selectAdjacentPosition == 4 then
+        if row+1 > numberOfRows then
+            outputArray(numberOfRows,col)=inputArray(row,col);
+        else
+            outputArray(row+1,col) = inputArray(row,col);
+        end
+    end
+
+endfunction
+
+function outputArray = generationvm(inputArray)
+    
+    numberOfRows = size(inputArray,'r')
+    numberOfCols = size(inputArray, 'c')
+    
+    row = ceil(numberOfRows*rand());
+    col = ceil(numberOfCols*rand());
+    
+    outputArray = inputArray;
+    selectAdjacentPosition = (ceil(4*rand()));
+    
+    if selectAdjacentPosition == 1 then
+        if col-1 < 1 then
+            outputArray(row,col) = inputArray(row,numberOfCols);
+        else
+            outputArray(row,col) = inputArray(row,col-1);
+        end,
+    elseif selectAdjacentPosition == 2 then
+        if col+1 > numberOfCols then
+            outputArray(row,col)=inputArray(row,numberOfCols);
+        else
+            outputArray(row,col) = inputArray(row,col+1);
+        end
+    elseif selectAdjacentPosition == 3 then
+        if row-1 < 1 then
+            outputArray(row,col)=inputArray(numberOfRows,col);
+        else
+            outputArray(row,col) = inputArray(row-1,col) ;
+        end
+    elseif selectAdjacentPosition == 4 then
+        if row+1 > numberOfRows then
+            outputArray(row,col)=inputArray(numberOfRows,col);
+        else
+            outputArray(row,col) = inputArray(row+1,col);
+        end
+    end
+    
+endfunction
